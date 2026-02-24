@@ -1,19 +1,23 @@
-<style type='text/sass'>
-  
-  @mixin border-radius($radius){
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    box-border-radius: $radius;
-  }
-  
-  #awesome {
-    width: 150px;
-    height: 150px;
-    background-color: green;
-    @include border-radius(15px);
-  }
+<style type='text/scss'>
+@mixin shape($w, $h, $bg-color) {
+  width: $w;
+  height: $h;
+  background-color: $bg-color;
+}
+
+#square {
+  @include shape(50px, 50px, red);
+}
+
+#rect-a {
+  @include shape(100px, 50px, blue);
+}
+
+#rect-b {
+  @include shape(50px, 100px, orange);
+}
 </style>
 
-<div id="awesome"></div>
-  
+<div id="square"></div>
+<div id="rect-a"></div>
+<div id="rect-b"></div>
